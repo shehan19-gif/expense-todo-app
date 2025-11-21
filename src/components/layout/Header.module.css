@@ -1,0 +1,25 @@
+.header {
+    padding: 1rem;
+    background-color: var(--accent-blue);
+    text-align: center;
+    display: grid;
+    grid-gap: 1rem;
+    justify-items: center;
+}
+
+.header .logout {
+    border: none;
+    border: 2px solid var(--accent-pink);
+    padding: 1rem;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--accent-pink);
+    color: var(--text-primary);
+    width: fit-content;
+    transition: background-color 1s;
+}
+
+.header .logout:hover {
+    background-color: rgba(239, 68, 68, 0.8);
+    border: 2px solid var(--error);
+}

@@ -1,0 +1,76 @@
+.expenseItem {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.expenseTypeIncome {
+    border: 2px solid var(--success);
+    background-color: rgba(16, 185, 129, 1);
+}
+
+.expenseTypeOutcome {
+    border: 2px solid var(--accent-pink);
+    background-color: rgba(236, 72, 153, .5);
+}
+
+.expenseItem .expenseData {
+    display: grid;
+    grid-gap: 1rem;
+    font-size: 1.25rem;
+}
+
+.expenseItem .expenseData .firstSec {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
+.expenseItem .expenseData .thirdSec {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.expenseItem .expenseAction {
+    margin-top: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.expenseItem .expenseAction button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-primary);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.125rem;
+}
+
+.expenseItem .expenseAction button.edit {
+    background-color: var(--accent-blue);
+}
+
+.expenseItem .expenseAction button.delete {
+    background-color: var(--error);
+}
+
+@media screen and (max-width: 540px) {
+    .expenseItem {
+        grid-template-columns: 1fr;
+    }
+
+    .expenseItem .expenseData {
+        font-size: 1rem;
+    }
+
+    .expenseItem .expenseAction button {
+        font-size: 1rem;
+    }
+}

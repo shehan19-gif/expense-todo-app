@@ -1,0 +1,96 @@
+.statsMain .statsSection {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+.statsMain .statsSection .statsTotal, .statsMonthly {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.statsMain .statsSection .statsDigit {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.statsMain .statsSection .statsTotal p {
+    padding: 1rem;
+}
+
+.statsMain .statsSection .statsTotal .statsTotalIncome {
+    background-color: var(--accent-blue);
+}
+
+.statsMain .statsSection .statsTotal .statsTotalSpend {
+    background-color: var(--error);
+}
+
+.statsMain .statsSection .statsTotal .statsTotalSaved {
+    background-color: var(--success);
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlyIncome {
+    border: 0.25rem solid var(--accent-blue);
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlyIncome .monthlyIncome {
+    background-color: var(--accent-blue);
+    padding: 0.5rem;
+    display: block;
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlyIncome span {
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySpend {
+    border: 0.25rem solid var(--error);
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySpend .monthlySpend {
+    background-color: var(--error);
+    padding: 0.5rem;
+    display: block;
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySpend span {
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySaved {
+    border: 0.25rem solid var(--success);
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySaved .monthlySaved {
+    background-color: var(--success);
+    padding: 0.5rem;
+    display: block;
+}
+
+.statsMain .statsSection .statsMonthly .statsMonthlySaved span {
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+@media screen and (max-width: 540px) {
+    .statsMain .statsSection .statsTotal, .statsMonthly {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .statsMain .statsSection .statsTotal .statsTotalSaved {
+        grid-column: 1/3;
+    }
+
+    .statsMain .statsSection .statsMonthly .statsMonthlySaved {
+        grid-column: 1/3;
+    }
+
+    .statsMain .statsSection .statsDigit {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+}

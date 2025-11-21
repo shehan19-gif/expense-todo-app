@@ -1,0 +1,8 @@
+.footer {
+    padding: 1rem;
+    background-color: var(--accent-blue);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

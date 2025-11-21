@@ -1,0 +1,83 @@
+.todoItem {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.todoItem .todoData {
+    display: grid;
+    grid-gap: 1rem;
+    font-size: 1.125rem;
+}
+
+.todoItem .todoAction {
+    margin-top: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.todoItem .todoAction button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--text-primary);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1.125rem;
+}
+
+.todoItem .todoAction button.edit {
+    background-color: var(--accent-blue);
+}
+
+.todoItem .todoAction button.delete {
+    background-color: var(--error);
+}
+
+.todoCompleted {
+    background-color: var(--todo-done);
+}
+
+.highPriority {
+    background-color: var(--accent-pink);
+}
+
+.mediumPriority {
+    background-color: var(--warning);
+}
+
+.lowPriority {
+    background-color: var(--success);
+}
+
+.todoItem input[type="checkbox"] {
+    font-size: 2rem;
+    width: 20px;
+    height: 20px;
+}
+
+.todoItem .todoIsCompletedSec {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 5fr 1fr;
+    align-items: center;
+}
+
+@media screen and (max-width: 540px) {
+    .todoItem {
+        grid-template-columns: 1fr;
+    }
+    .todoItem .todoData {
+        font-size: 0.875rem;
+    }
+
+    .todoItem .todoAction button {
+        font-size: 1rem;
+    }
+}

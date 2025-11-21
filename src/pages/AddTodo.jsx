@@ -1,0 +1,35 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import TodoForm from '../components/todo/TodoForm';
+import { useTodos } from '../hooks/useTodos';
+
+function AddTodo() {
+  const {addTodo} = useTodos();
+  const navigate = useNavigate();
+
+  const handleAddTodo = async (todoData) => {
+    const result = await addTodo(todoData);
+
+    if(result.success) {
+      navigate("/todos");
+    }
+
+    return result;
+  };
+
+  const handleCancel = () => {
+    navigate("/todos");
+  };
+
+  return (
+    <div className="addTodo">
+      <h1>Add New Todo</h1>
+      <TodoForm
+        onSubmit={handleAddTodo}
+        onCancel={handleCancel}
+      />
+    </div>
+  );
+};
+
+export default AddTodo;

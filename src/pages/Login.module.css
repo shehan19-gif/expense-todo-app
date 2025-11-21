@@ -1,0 +1,56 @@
+.loginSec {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-gap: 1rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-gap: 1rem;
+    width: 25rem;
+    padding: 1rem;
+}
+
+input[type="email"], input[type="password"] {
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    width: -webkit-fill-available;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-primary);
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+label {
+    display: block;
+    padding: 0.25rem;
+}
+
+.loginBtn {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: none;
+    outline: none;
+    background-color: var(--success);
+    color: var(--text-primary);
+}
+
+.otherNavigations {
+    padding: 1rem;
+}
+
+.otherNavigations p a {
+    text-decoration: none;
+    color: var(--warning);
+}

@@ -1,0 +1,56 @@
+.register {
+    display: grid;
+    place-content: center;
+}
+
+input[type="tel"], input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    width: -webkit-fill-available;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-primary);
+    background-color: transparent;
+    color: var(--text-primary);
+}
+
+input[type="date"] {
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    width: -webkit-fill-available;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-primary);
+    background-color: var(--accent-cyan);
+    color: var(--text-primary);
+}
+
+textarea {
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    width: -webkit-fill-available;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.register p {
+    padding: 1rem;
+}
+
+.register p a {
+    text-decoration: none;
+    color: var(--warning);
+}
+
+.signupBtn {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: none;
+    outline: none;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+}

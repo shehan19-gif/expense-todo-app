@@ -1,0 +1,29 @@
+.profile {
+    display: grid;
+    place-content: center;
+    position: relative;
+}
+
+.profile label {
+    color: rgb(222, 176, 176);
+}
+
+.profile .update_profile button {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: none;
+    outline: none;
+    background-color: var(--success);
+    color: var(--text-primary);
+}
+
+.profile .update_user_credentials button {
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: none;
+    outline: none;
+    background-color: var(--success);
+    color: var(--text-primary);
+}
