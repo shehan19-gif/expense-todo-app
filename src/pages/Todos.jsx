@@ -76,13 +76,8 @@ function Todos() {
 
   return (
     <div className={styles.todos}>
+      <div className={styles.allTogether}>
         <h1>Todo List</h1>
-        
-        <div>
-          <Link to="/todos/add" className={styles.addTodosBtn}>
-              <button>Add a New Todo</button>
-          </Link>
-        </div>
 
         <div className={styles.todos_filter}>
           <label htmlFor="filter-select"><div>Filter Tasks: </div>
@@ -117,6 +112,13 @@ function Todos() {
           <label htmlFor="filter-date"><div>Filter By Date: </div>
             <input type="date" name="filter-date" id="filter-date" value={dateFilter} onChange={handleDateFilter} />
           </label>
+        </div>
+      </div>
+
+        <div className={styles.addTodosBtnHolder}>
+          <Link to="/todos/add" className={styles.addTodosBtn}>
+              <button>+</button>
+          </Link>
         </div>
 
         <TodoList 

@@ -1,5 +1,6 @@
 // API base url
-const API_BASE_URL = "http://localhost:8080/api/";
+// const API_BASE_URL = "http://localhost:8080/api/";
+const API_BASE_URL = "https://expense-todo-app-backend.vercel.app/api/";
 
 const handleResponse = async (response) => {
     if (response.status === 401) {

@@ -33,11 +33,33 @@
 }
 
 .todoItem .todoAction button.edit {
-    background-color: var(--accent-blue);
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.todoItem .todoAction button.edit:hover {
+  background-color: #2563EB;
 }
 
 .todoItem .todoAction button.delete {
-    background-color: var(--error);
+    background-color: #EF4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.todoItem .todoAction button.delete:hover {
+  background-color: #DC2626;
 }
 
 .todoCompleted {
@@ -45,15 +67,21 @@
 }
 
 .highPriority {
-    background-color: var(--accent-pink);
+    background-color: #FFEBEE;
+    color: #B71C1C;
+    border-left: 4px solid #D32F2F;
 }
 
 .mediumPriority {
-    background-color: var(--warning);
+    background-color: #FFF3E0;
+    color: #E65100;
+    border-left: 4px solid #FF9800;
 }
 
 .lowPriority {
-    background-color: var(--success);
+    background-color: #E8F5E9;
+    color: #1B5E20;
+    border-left: 4px solid #388E3C;
 }
 
 .todoItem input[type="checkbox"] {

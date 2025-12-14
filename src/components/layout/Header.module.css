@@ -1,6 +1,6 @@
 .header {
     padding: 1rem;
-    background-color: var(--accent-blue);
+    background-color: var(--accent-navy);
     text-align: center;
     display: grid;
     grid-gap: 1rem;
@@ -9,17 +9,28 @@
 
 .header .logout {
     border: none;
-    border: 2px solid var(--accent-pink);
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     outline: none;
     cursor: pointer;
-    background-color: var(--accent-pink);
+    background-color: var(--error);
     color: var(--text-primary);
-    width: fit-content;
     transition: background-color 1s;
+    height: -webkit-fill-available;
 }
 
-.header .logout:hover {
-    background-color: rgba(239, 68, 68, 0.8);
-    border: 2px solid var(--error);
+.header .quickLinks {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    align-items: center;
+}
+
+.header .quickLinks .homeLink {
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    height: -webkit-fill-available;
 }

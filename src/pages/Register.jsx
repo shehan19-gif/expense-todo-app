@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
@@ -17,18 +17,32 @@ function Register() {
   const [loading, setLoading] = useState("");
   const {register} = useAuth();
   const navigate = useNavigate();
+  const [success, setSuccess] = useState("");
+  const msgRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
     setLoading(true);
     setError("");
 
     const result = await register(userData);
 
     if(result.success) {
-      navigate("/selector");
+      setSuccess("Signup Successfully");
+
+      // Clear the form
+      setUserdata({
+        firstName: "",
+        lastName: "",
+        birthDate: "",
+        address: "",
+        telephone: "",
+        email: "",
+        password: "",
+      });
     } else {
-      setError(result.error);
+      setError(result.error || "Registration failed");
     }
 
     setLoading(false);
@@ -41,6 +55,11 @@ function Register() {
     });
   };
 
+  const handleClick = () => {
+    msgRef.current.display = "None";
+    setSuccess("");
+  };
+
   return (
     <div className={styles.register}>
       <div className="container">
@@ -49,6 +68,10 @@ function Register() {
       
         <form onSubmit={handleSubmit}>
           {error && <div className='register__error'>{error}</div>}
+          {success && <div className={styles.successMsg} ref={msgRef}>
+              <p>{success}</p>
+              <button className={styles.successMsgCloseBtn} onClick={handleClick}>X</button>
+            </div>}
 
           <div className="register__first-name">
             <label>First Name</label>

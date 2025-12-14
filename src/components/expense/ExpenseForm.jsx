@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
+import styles from "../../pages/Register.module.css";
+import stylesForm from "./ExpenseForm.module.css";
+
 function ExpenseForm({onSubmit, initialData, onCancel}) {
   const [formData, setFormData] = useState({
     amount: "",
@@ -62,13 +65,13 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
   };
 
   return (
-    <div className="expenseForm">
+    <div className={styles.register}>
         <form onSubmit={handleSubmit}>
-            <h3>{initialData? "" : "Add New Expense"}</h3>
+            <h1 className={stylesForm.mainHeader}>{initialData? "" : "Add New Expense"}</h1>
             {error && <div>{error}</div>}
             {status && <div>{status}</div>}
 
-            <div className="expenseForm__form-section">
+            <div className={stylesForm.formSection}>
                 <div className="expenseForm__amount">
                     <label>Amount</label>
                     <input type="number" name="amount" id="amount" value={formData.amount} onChange={handleChange} step={0.01} required />
@@ -136,10 +139,10 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
 
             <div className="expenseForm__actions">
                 {onCancel && (
-                    <button type="button" onClick={onCancel}>Cancel</button>
+                    <button type="button" className={stylesForm.cancelBtn} onClick={onCancel}>Cancel</button>
                 )}
 
-                <button type="submit">
+                <button type="submit" className={stylesForm.addOrUpdateBtn}>
                     {initialData? "Update Expense" : "Add Expense"}
                 </button>
             </div>

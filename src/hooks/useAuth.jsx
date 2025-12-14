@@ -42,8 +42,7 @@ export const AuthProvider = ({children}) => {
     const register = async (userData) => {
         try {
             const response = await authAPI.register(userData);
-            setUser(response.user);
-            return {success: true};
+            return {success: true, data: response};
         } catch(error) {
             return ({success: false, error: error.message});
         }

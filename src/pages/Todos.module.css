@@ -4,12 +4,21 @@
     padding: 1rem;
 }
 
+.todos .allTogether {
+    display: grid;
+    grid-gap: 1rem;
+    background-color: var(--accent-charcoal);
+    padding: 1rem;
+    z-index: 100;
+}
+
 .todos h1 {
     text-align: center;
 }
 
 .todos .addTodosBtn {
     text-align: center;
+    text-decoration: none;
 }
 
 .todos .addTodosBtn button {
@@ -17,10 +26,14 @@
     outline: none;
     border: none;
     padding: 1rem;
-    /* width: 100%; */
     background-color: var(--success);
-    color: var(--text-primary);
     font-size: 1.25rem;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    place-content: center;
+    color: var(--text-primary);
 }
 
 .todos .todos_filter {
@@ -59,10 +72,35 @@
     justify-content: center;
 }
 
+.todos .addTodosBtnHolder {
+    position: fixed;
+    right: 15%;
+    bottom: 15%;
+}
+
+@media screen and (max-width: 1024px) {
+    .todos .addTodosBtnHolder {
+        right: 5%;
+        bottom: 15%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .todos .addTodosBtnHolder {
+        right: 10%;
+        bottom: 12.5%;
+    }
+}
+
 @media screen and (max-width: 540px) {
     .todos .todos_filter {
         grid-auto-flow: unset;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
+    }
+
+    .todos .addTodosBtnHolder {
+        right: 7.5%;
+        bottom: 20%;
     }
 }

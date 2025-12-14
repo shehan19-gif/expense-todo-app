@@ -22,7 +22,6 @@ function AddExpense() {
 
   return (
     <div className="addExpense">
-        <h1>Add New Expense</h1>
         <ExpenseForm
             onSubmit={handleAddExpense}
             onCancel={handleCancel}

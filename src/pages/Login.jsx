@@ -40,7 +40,7 @@ function Login() {
         <h2>Login</h2>
       
         <form onSubmit={handleSubmit}>
-          {error && <div className='login__error'>{error}</div>}
+          {error && <div className='login__error'>Login Error!</div>}
           
           <div className="login__email">
             <label>Email</label>

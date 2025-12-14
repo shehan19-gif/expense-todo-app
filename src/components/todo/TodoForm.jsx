@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
 
+import styles from "../../pages/Register.module.css";
+import stylesForm from "../expense/ExpenseForm.module.css";
+
 const TodoForm = ({onSubmit, initialData, onCancel}) => {
   const [formData, setFormData] = useState({
     title: "",
@@ -45,12 +48,12 @@ const TodoForm = ({onSubmit, initialData, onCancel}) => {
   };
 
   return (
-    <div className="todoForm">
+    <div className={styles.register}>
         <form onSubmit={handleSubmit}>
-            <h3>{initialData ? 'Edit Todo' : 'Add New Todo'}</h3>
+            <h1 className={stylesForm.mainHeader}>{initialData ? 'Edit Todo' : 'Add a New Todo'}</h1>
             {error && <div style={{ color: 'red' }}>{error}</div>}
 
-            <div className="todoForm__inputs">
+            <div className={stylesForm.formSection}>
                 <div className="todoForm__title">
                     <label>Title</label>
                     <input type="text" name="title" id="title" value={formData.title} onChange={handleChange} required />
@@ -91,11 +94,11 @@ const TodoForm = ({onSubmit, initialData, onCancel}) => {
 
             <div className="todoForm__actions">
                 {onCancel && (
-                    <button type="button" onClick={onCancel}>
+                    <button type="button" className={stylesForm.cancelBtn} onClick={onCancel}>
                         Cancel
                     </button>
                 )}
-                <button type="submit">
+                <button type="submit" className={stylesForm.addOrUpdateBtn}>
                     {initialData ? 'Update Todo' : 'Add Todo'}
                 </button>
             </div>

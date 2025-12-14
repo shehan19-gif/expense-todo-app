@@ -23,7 +23,6 @@ function AddTodo() {
 
   return (
     <div className="addTodo">
-      <h1>Add New Todo</h1>
       <TodoForm
         onSubmit={handleAddTodo}
         onCancel={handleCancel}

@@ -49,7 +49,6 @@ function EditTodo() {
 
   return (
     <div className="editTodo">
-        <h1>Edit Todo</h1>
         <TodoForm
             onSubmit={handleUpdateTodo}
             initialData={todo}
