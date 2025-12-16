@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
+import MessageButton from '../components/ui/MessageButton';
 
 function Login() {
   const [credentials, setCredentials] = useState({email: "", password: ""});
@@ -20,7 +21,7 @@ function Login() {
     if(result.success) {
       navigate("/selector");
     } else {
-      setError(result.error);
+      setError("Invalid Login Credentials");
     }
 
     setLoading(false);
@@ -40,7 +41,7 @@ function Login() {
         <h2>Login</h2>
       
         <form onSubmit={handleSubmit}>
-          {error && <div className='login__error'>Login Error!</div>}
+          {error && <MessageButton type="error" message={error} func1={setError} />}
           
           <div className="login__email">
             <label>Email</label>

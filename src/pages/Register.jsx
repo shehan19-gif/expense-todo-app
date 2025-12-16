@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
+import MessageButton from '../components/ui/MessageButton';
 
 function Register() {
   const [userData, setUserdata] = useState({
