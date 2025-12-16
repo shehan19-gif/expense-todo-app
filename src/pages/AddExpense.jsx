@@ -10,10 +10,14 @@ function AddExpense() {
   const handleAddExpense = async (expenseData) => {
     const result = await addExpense(expenseData);
     if(result.success) {
-        navigate("/expenses");
+        return {
+          success: true,
+          message: "Successfully Created!",
+          type: "new"
+        };
     }
 
-    return result;
+    return { success: false, error: "Can't Create a New Expense!" };
   };
 
   const handleCancel = () => {

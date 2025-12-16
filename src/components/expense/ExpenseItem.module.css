@@ -4,6 +4,7 @@
     grid-gap: 1rem;
     align-items: center;
     padding: 1rem;
+    width: 100%;
 }
 
 .expenseTypeIncome {
@@ -37,6 +38,10 @@
 .expenseItem .expenseData .thirdSec {
     display: grid;
     grid-gap: 1rem;
+}
+
+.expenseItem .expenseData .thirdSec .description {
+    word-break: break-all;
 }
 
 .expenseItem .expenseAction {

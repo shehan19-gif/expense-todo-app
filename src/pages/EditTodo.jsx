@@ -31,11 +31,15 @@ function EditTodo() {
 
   const handleUpdateTodo = async (todoData) => {
     try {
-        const response = await todosAPI.update(id, todoData);
-        navigate("/todos");
-        return {success: true};
+      const response = await todosAPI.update(id, todoData);
+      const updatedTodo = response.data || todoData;
+      // navigate("/todos");
+      return { success: true, message: "Successfully Updated", updatedTodo };
     } catch(err) {
-        return { success: false, error: err.message };
+      setError(err.message || 'Failed to update todo');
+      return { success: false, error: "Update Unsuccessfull!" };
+    } finally {
+      setLoading(false);
     }
   };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useProfile } from '../hooks/useProfile';
 import styles from './Profile.module.css';
+import MessageButton from '../components/ui/MessageButton';
 
 function Profile() {
   const {userDetails, updateUserDetails, updateUserCredentials, deleteUser} = useProfile();
@@ -33,13 +34,13 @@ function Profile() {
     }
   }, [userDetails]);
 
-  const [detailsError, setDetailsError] = useState(null);
+  const [detailsError, setDetailsError] = useState("");
   const [detailsLoading, setDetailsLoading] = useState(false);
-  const [detailsSuccess, setDetailsSuccess] = useState(null);
+  const [detailsSuccess, setDetailsSuccess] = useState("");
 
-  const [credentialError, setCredentialError] = useState(null);
+  const [credentialError, setCredentialError] = useState("");
   const [credentialLoading, setCredentialLoading] = useState(false);
-  const [credentialSuccess, setCredentialSuccess] = useState(null);
+  const [credentialSuccess, setCredentialSuccess] = useState("");
 
   const handleDataChange = (e) => {
     setFormData({
@@ -58,6 +59,8 @@ function Profile() {
   const handleDataSubmit = async (e) => {
     e.preventDefault();
     setDetailsLoading(true);
+    setDetailsError("");
+    setDetailsSuccess("");
 
     const result = await updateUserDetails(formData);
 
@@ -73,6 +76,8 @@ function Profile() {
   const handleCredentialsSubmit = async (e) => {
     e.preventDefault();
     setCredentialLoading(true);
+    setCredentialError("");
+    setCredentialSuccess("");
 
     const result = await updateUserCredentials(credentialsData);
 
@@ -83,6 +88,11 @@ function Profile() {
     }
 
     setCredentialLoading(false);
+
+    setCredentialsData( () => ({
+        previousPassword: "",
+        currentPassword: "",
+    }));
   };
 
   return (
@@ -91,8 +101,8 @@ function Profile() {
         <div className="profile__details">
             <form onSubmit={handleDataSubmit}>
                 <h2>User Details</h2>
-                {detailsError && <div>{detailsError}</div>}
-                {detailsSuccess && <div>{detailsSuccess}</div>}
+                {detailsError && <MessageButton type="error" message={detailsError} func1={setDetailsSuccess} func2={setDetailsError}/>}
+                {detailsSuccess && <MessageButton type="success" message={detailsSuccess} func1={setDetailsSuccess} func2={setDetailsError}/>}
 
                 <div className="profile__details-firstName">
                     <label>First Name: </label>
@@ -136,8 +146,8 @@ function Profile() {
             <form onSubmit={handleCredentialsSubmit}>
 
                 <h2>Credential Details</h2>
-                {credentialError && <div>{credentialError}</div>}
-                {credentialSuccess && <div>{credentialSuccess}</div>}
+                {credentialError && <MessageButton type="error" message={credentialError} func1={setCredentialSuccess} func2={setCredentialError}/>}
+                {credentialSuccess && <MessageButton type="success" message={credentialSuccess} func1={setCredentialSuccess} func2={setCredentialError}/>}
 
                 <div className="credentials__details-prev-pwd">
                     <label>Previous Password: </label>

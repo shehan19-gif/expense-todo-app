@@ -11,10 +11,14 @@ function AddTodo() {
     const result = await addTodo(todoData);
 
     if(result.success) {
-      navigate("/todos");
+      return {
+        success: true,
+        message: "Successfully Created!",
+        type: "new"
+      };
     }
 
-    return result;
+    return { success: false, error: "Can't Add a Todo!" };
   };
 
   const handleCancel = () => {

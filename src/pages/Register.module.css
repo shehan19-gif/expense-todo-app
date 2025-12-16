@@ -30,7 +30,7 @@ textarea {
     font-size: 1.125rem;
     width: -webkit-fill-available;
     background-color: transparent;
-    border: none;
+    border: 2px solid var(--text-primary);
     outline: none;
     border-bottom: 2px solid var(--text-primary);
     color: var(--text-primary);

@@ -1,4 +1,12 @@
 .layout {
     display: grid;
     grid-gap: 1rem;
+    grid-template-rows: max-content auto 100px;
+    height: 100vh;
+}
+
+@media screen and (max-width: 360px) {
+    .layout {
+        grid-template-rows: 200px calc(100vh - 250px) 100px;
+    }
 }

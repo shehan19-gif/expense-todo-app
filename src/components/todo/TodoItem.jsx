@@ -19,20 +19,20 @@ function TodoItem({todo, onDelete, onToggleComplete}) {
         <div className={styles.todoData}>
             <div className={styles.todoIsCompletedSec}>
                 <h3 style={{textDecoration: todo.isCompleted? "line-through" : "none"}}>
-                    {todo.title}
+                    {"📌 " + todo.title}
                 </h3>
                 <input type="checkbox" name="isCompleted" id="isCompleted" checked={todo.isCompleted} onChange={handleToggle}/>
             </div>
-            <p>{todo.priority}</p>
-            <p>{todo.category}</p>
-            {todo.description && <p>{todo.description}</p>}
-            {todo.dueDate && (<p>Due: {new Date(todo.dueDate).toLocaleDateString()}</p>)}
+            <p>{"⚡ " + todo.priority}</p>
+            <p>{"🏷️ " + todo.category}</p>
+            {todo.description && <p>{"📝 " + todo.description}</p>}
+            {todo.dueDate && (<p>⏳ Complete Before: {new Date(todo.dueDate).toLocaleDateString()}</p>)}
         </div>
         <div className={styles.todoAction}>
             <Link to={`/todos/edit/${todo._id}`}>
-                <button className={styles.edit}>Edit</button>
+                <button className={styles.edit}>✏️ Edit</button>
             </Link>
-            <button onClick={handleDelete} className={styles.delete}>Delete</button>
+            <button onClick={handleDelete} className={styles.delete}>🗑️ Delete</button>
         </div>
     </div>
   );

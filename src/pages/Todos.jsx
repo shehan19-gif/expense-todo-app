@@ -80,38 +80,50 @@ function Todos() {
         <h1>Todo List</h1>
 
         <div className={styles.todos_filter}>
-          <label htmlFor="filter-select"><div>Filter Tasks: </div>
-            <select name="fiter-select" id="filter-select" value={filter} onChange={handleFilterChange}>
-              <option value="all">All Tasks</option>
-              <option value="pending">Pending</option>
-              <option value="completed">Completed</option>
-            </select>
-          </label>
+          <div className={styles.todosFiltersHolder}>
+            <div>🔎 By Task: </div>
+              <div>
+              <select name="fiter-select" id="filter-select" value={filter} onChange={handleFilterChange}>
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+          </div>
 
-          <label htmlFor="filter-priority"> <div>Filter By Priority: </div>
-            <select name="filter-priority" id="filter-priority" value={priorityFilter} onChange={handlePriorityFilter}>
-              <option value="all">All</option>
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">low</option>
-            </select>
-          </label>
+          <div className={styles.todosFiltersHolder}>
+            <div>🔎 By Priority: </div>
+            <div>
+              <select name="filter-priority" id="filter-priority" value={priorityFilter} onChange={handlePriorityFilter}>
+                <option value="all">All</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">low</option>
+              </select>
+            </div>
+          </div>
 
-          <label htmlFor="filter-category"> <div>Filter By Category: </div>
-            <select name="filter-category" id="filter-category" value={categoryFilter} onChange={handleCategoryFilter}>
-              <option value="all">All</option>
-              <option value="food">Food</option>
-              <option value="education">Education</option>
-              <option value="transport">Transport</option>
-              <option value="entertainment">Entertainment</option>
-              <option value="utilities">Utilities</option>
-              <option value="other">Other</option>
-            </select>
-          </label>
+          <div className={styles.todosFiltersHolder}>
+            <div>🔎 By Category: </div>
+            <div>
+              <select name="filter-category" id="filter-category" value={categoryFilter} onChange={handleCategoryFilter}>
+                <option value="all">All</option>
+                <option value="food">Food</option>
+                <option value="education">Education</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="utilities">Utilities</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
 
-          <label htmlFor="filter-date"><div>Filter By Date: </div>
-            <input type="date" name="filter-date" id="filter-date" value={dateFilter} onChange={handleDateFilter} />
-          </label>
+          <div className={styles.todosFiltersHolder}>
+            <div>🔎 By Date: </div>
+            <div>
+              <input type="date" name="filter-date" id="filter-date" value={dateFilter} onChange={handleDateFilter} />
+            </div>
+          </div>
         </div>
       </div>
 

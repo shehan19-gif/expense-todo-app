@@ -53,3 +53,8 @@ body {
 h1 {
     text-align: center;
 }
+
+main {
+    display: grid;
+    align-items: center;
+}

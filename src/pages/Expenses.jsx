@@ -67,31 +67,40 @@ function Expenses() {
 
           <div className={styles.expenses_filter}>
 
-            <label htmlFor="filter-category"> <div>Filter By Category: </div>
-              <select name="filter-category" id="filter-category" value={categoryFilter} onChange={handleCategoryFilter}>
-                <option value="all">All</option>
-                <option value="food">Food</option>
-                <option value="education">Education</option>
-                <option value="transport">Transport</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="utilities">Utilities</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
+            <div className={styles.newFilterHolder}>
+              <div>🔎 By Category: </div>
+              <div>
+                <select name="filter-category" id="filter-category" value={categoryFilter} onChange={handleCategoryFilter}>
+                  <option value="all">All</option>
+                  <option value="food">Food</option>
+                  <option value="education">Education</option>
+                  <option value="transport">Transport</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="utilities">Utilities</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
 
-            <label htmlFor="filter-payment"> <div>Filter By Payment Method: </div>
-              <select name="filter-payment" id="filter-payment" value={paymentFilter} onChange={handlePaymentFilter}>
-                <option value="all">All</option>
-                <option value="cash">Cash</option>
-                <option value="card">Card</option>
-                <option value="cheque">Cheque</option>
-                <option value="other">Other</option>
-              </select>
-            </label>
+            <div className={styles.newFilterHolder}>
+              <div>🔎 By Payment Method: </div>
+              <div>
+                <select name="filter-payment" id="filter-payment" value={paymentFilter} onChange={handlePaymentFilter}>
+                  <option value="all">All</option>
+                  <option value="cash">Cash</option>
+                  <option value="card">Card</option>
+                  <option value="cheque">Cheque</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
 
-            <label htmlFor="filter-date"><div>Filter By Date: </div>
-              <input type="date" name="filter-date" id="filter-date" value={dateFilter} onChange={handleDateFilter} />
-            </label>
+            <div className={styles.newFilterHolder}>
+              <div>🔎 By Date: </div>
+              <div>
+                <input type="date" name="filter-date" id="filter-date" value={dateFilter} onChange={handleDateFilter} />
+              </div>
+            </div>
           </div>
         </div>
 

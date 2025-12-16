@@ -20,23 +20,31 @@
 }
 
 .statsMain .statsSection .statsTotal .statsTotalIncome {
-    background-color: var(--accent-blue);
+    background-color: #052E16;
+    border: 1px solid #065F46;
+    color: #34D399;
 }
 
 .statsMain .statsSection .statsTotal .statsTotalSpend {
-    background-color: var(--error);
+    background-color: #450A0A;
+    border: 1px solid #991B1B;
+    color: #FCA5A5;
 }
 
 .statsMain .statsSection .statsTotal .statsTotalSaved {
-    background-color: var(--success);
+    background-color: #1E3A8A;
+    border: 1px solid #1D4ED8;
+    color: #93C5FD;
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlyIncome {
-    border: 0.25rem solid var(--accent-blue);
+    border: 1px solid #065F46;
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlyIncome .monthlyIncome {
-    background-color: var(--accent-blue);
+    background-color: #052E16;
+    border: 1px solid #065F46;
+    color: #34D399;
     padding: 0.5rem;
     display: block;
 }
@@ -47,11 +55,13 @@
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlySpend {
-    border: 0.25rem solid var(--error);
+    border: 1px solid #991B1B;
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlySpend .monthlySpend {
-    background-color: var(--error);
+    background-color: #450A0A;
+    border: 1px solid #991B1B;
+    color: #FCA5A5;
     padding: 0.5rem;
     display: block;
 }
@@ -62,11 +72,13 @@
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlySaved {
-    border: 0.25rem solid var(--success);
+    border: 1px solid #1D4ED8;
 }
 
 .statsMain .statsSection .statsMonthly .statsMonthlySaved .monthlySaved {
-    background-color: var(--success);
+    background-color: #1E3A8A;
+    border: 1px solid #1D4ED8;
+    color: #93C5FD;
     padding: 0.5rem;
     display: block;
 }

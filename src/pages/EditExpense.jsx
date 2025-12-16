@@ -34,10 +34,10 @@ function EditExpense() {
       const response = await expensesAPI.update(id, expenseData);
       const updatedExpense = response.data || expenseData;
       // navigate('/expenses');
-      return { success: true, updatedExpense };
+      return { success: true, message: "Successfully Updated", updatedExpense };
     } catch(err) {
       setError(err.message || 'Failed to update expense');
-      return { success: false, error: err.message };
+      return { success: false, error: "Update Unsuccessfull!" };
     } finally {
       setLoading(false);
     }

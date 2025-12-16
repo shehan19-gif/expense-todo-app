@@ -1,0 +1,39 @@
+.successMsg {
+    padding: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    background-color: rgba(16, 185, 129, 0.5);
+    border: 2px solid var(--success);
+    align-items: center;
+}
+
+.successMsgCloseBtn {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: 2px solid var(--success);
+    outline: none;
+    background-color: var(--success);
+    color: var(--text-primary);
+}
+
+.errorMsg {
+    padding: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    background-color: rgba(255, 27, 77, 0.5);
+    border: 2px solid var(--error);
+    align-items: center;
+}
+
+.errorMsgCloseBtn {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: 2px solid var(--error);
+    outline: none;
+    background-color: var(--error);
+    color: var(--text-primary);
+}

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-
+import MessageButton from '../ui/MessageButton';
 import styles from "../../pages/Register.module.css";
 import stylesForm from "./ExpenseForm.module.css";
 
 function ExpenseForm({onSubmit, initialData, onCancel}) {
+  const userId = useAuth().user.userId;
   const [formData, setFormData] = useState({
     amount: "",
     type: "",
@@ -13,7 +14,7 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
     paymentMethod: "",
     description: "",
     note: "",
-    user: useAuth().user.userId,
+    user: userId,
   });
 
   const [error, setError] = useState("");
@@ -53,7 +54,19 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
         });
 
         if(result.success) {
-            setStatus("Successfully updated");
+            setStatus(result.message);
+            if(result.type == "new") {
+                setFormData(() => ({
+                    amount: "",
+                    type: "",
+                    category: "",
+                    date: "",
+                    paymentMethod: "",
+                    description: "",
+                    note: "",
+                    user: userId,
+                }));
+            }
         } else {
             setError(result.error || "An error occurred");
         }
@@ -67,18 +80,18 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
   return (
     <div className={styles.register}>
         <form onSubmit={handleSubmit}>
-            <h1 className={stylesForm.mainHeader}>{initialData? "" : "Add New Expense"}</h1>
-            {error && <div>{error}</div>}
-            {status && <div>{status}</div>}
+            <h1 className={stylesForm.mainHeader}>{initialData? "" : "Add a New Expense"}</h1>
+            {error && <MessageButton type="error" message={error} func1={setStatus} func2={setError}/>}
+            {status && <MessageButton type="success" message={status} func1={setStatus} func2={setError}/>}
 
             <div className={stylesForm.formSection}>
                 <div className="expenseForm__amount">
-                    <label>Amount</label>
+                    <label>💰 Amount (LKR): </label>
                     <input type="number" name="amount" id="amount" value={formData.amount} onChange={handleChange} step={0.01} required />
                 </div>
 
                 <div className="formData__type">
-                    <label>Type</label>
+                    <label>⬆️⬇️ Type: </label>
                     <label>
                         <input type="radio" name="type" id="type" value={"income"} checked={formData.type === "income"} onChange={handleChange} />
                         Income
@@ -90,7 +103,7 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                 </div>
 
                 <div className="expenseForm__category">
-                    <label>Category</label>
+                    <label>🏷️ Category: </label>
                     <select name="category" id="category" value={formData.category} onChange={handleChange} required>
                         <option value="">Select Category</option>
                         <option value="food">Food</option>
@@ -102,12 +115,12 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                 </div>
 
                 <div className="expenseForm__date">
-                    <label>Date</label>
+                    <label>📅 Date: </label>
                     <input type="date" name="date" id="date" value={formData.date} onChange={handleChange} required />
                 </div>
 
                 <div className="formData__payment-method">
-                    <label>Payment Method</label>
+                    <label>💳 Payment Method: </label>
                     <label>
                         <input type="radio" name="paymentMethod" id="paymentMethod" value={"cash"} checked={formData.paymentMethod === "cash"} onChange={handleChange} />
                         Cash
@@ -127,12 +140,12 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                 </div>
 
                 <div className="formData__description">
-                    <label>Description</label>
+                    <label>📝 Description: </label>
                     <textarea name='description' value={formData.description} onChange={handleChange} rows={5} required />
                 </div>
 
                 <div className="formData__note">
-                    <label>Note</label>
+                    <label>🗒️ Note: </label>
                     <textarea name='note' value={formData.note} onChange={handleChange} rows={2} />
                 </div>
             </div>
