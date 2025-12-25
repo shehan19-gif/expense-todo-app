@@ -104,12 +104,46 @@ const TodoForm = ({onSubmit, initialData, onCancel}) => {
                     <label>🏷️ Category: </label>
                     <select name="category" id="category" value={formData.category} onChange={handleChange} required>
                         <option value="">Select Category</option>
-                        <option value="food">Food</option>
-                        <option value="education">Education</option>
-                        <option value="transport">Transport</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="utilities">Utilities</option>
-                        <option value="other">Other</option>
+                        <option value="🎯 Focus">🎯 Focus</option>
+                        <option value="💼 Work">💼 Work</option>
+                        <option value="🏠 Personal">🏠 Personal</option>
+                        <option value="🛒 Shopping">🛒 Shopping</option>
+                        <option value="🏃 Fitness">🏃 Fitness</option>
+                        <option value="📚 Learning">📚 Learning</option>
+                        <option value="👨‍👩‍👧‍👦 Family">👨‍👩‍👧‍👦 Family</option>
+                        <option value="⏰ Urgent">⏰ Urgent</option>
+                        <option value="📊 Projects">📊 Projects</option>
+                        <option value="📈 Goals">📈 Goals</option>
+                        <option value="✍️ Writing">✍️ Writing</option>
+                        <option value="📅 Planning">📅 Planning</option>
+                        <option value="🏡 Home">🏡 Home</option>
+                        <option value="💰 Finance">💰 Finance</option>
+                        <option value="📋 Errands">📋 Errands</option>
+                        <option value="🥗 Health">🥗 Health</option>
+                        <option value="🧘 Self-care">🧘 Self-care</option>
+                        <option value="😴 Sleep">😴 Sleep</option>
+                        <option value="🍎 Diet">🍎 Diet</option>
+                        <option value="📖 Reading">📖 Reading</option>
+                        <option value="💡 Ideas">💡 Ideas</option>
+                        <option value="🎨 Creative">🎨 Creative</option>
+                        <option value="🧠 Skill">🧠 Skill</option>
+                        <option value="👯 Friends">👯 Friends</option>
+                        <option value="❤️ Love">❤️ Love</option>
+                        <option value="🎉 Events">🎉 Events</option>
+                        <option value="📞 Calls">📞 Calls</option>
+                        <option value="💻 Computer">💻 Computer</option>
+                        <option value="📱 Digital">📱 Digital</option>
+                        <option value="📧 Email">📧 Email</option>
+                        <option value="🔧 Maintenance">🔧 Maintenance</option>
+                        <option value="🌅 Morning">🌅 Morning</option>
+                        <option value="🌙 Evening">🌙 Evening</option>
+                        <option value="📆 Weekly">📆 Weekly</option>
+                        <option value="📅 Monthly">📅 Monthly</option>
+                        <option value="✨ Bucket List">✨ Bucket List</option>
+                        <option value="🎁 Gifts">🎁 Gifts</option>
+                        <option value="🚗 Travel">🚗 Travel</option>
+                        <option value="🏠 Home Improvement">🏠 Home Improvement</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
             </div>

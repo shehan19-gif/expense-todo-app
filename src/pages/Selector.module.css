@@ -6,7 +6,8 @@
 
 .selector .container {
     display: grid;
-    align-content: space-around;
+    /* align-content: space-around; */
+    grid-gap: 1rem;
 }
 
 .selector h2 {
@@ -22,9 +23,10 @@
     display: grid;
     grid-auto-flow: column;
     grid-gap: 1rem;
+    padding: 1rem;
 }
 
-.selector .actions a {
+/* .selector .actions a {
     display: grid;
     place-content: center;
     width: 10rem;
@@ -66,4 +68,171 @@
     .selector .actions {
         grid-auto-flow: row;
     }
+} */
+
+/* Custom design */
+.greeting {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.username {
+  color: #34d399;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardsContainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.emoji {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 50%;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.cardDescription {
+  color: #718096;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.cardButton {
+  display: inline-block;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.expensesBtn {
+  background-color: #10b981;
+  color: white;
+}
+
+.expensesBtn:hover {
+  background-color: transparent;
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.todosBtn {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.todosBtn:hover {
+  background-color: transparent;
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.profileBtn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.profileBtn:hover {
+  background-color: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .greeting {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+    .selector .actions {
+        grid-auto-flow: row;
+    }
+}
+
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.75rem;
+  }
+  
+  .emoji {
+    font-size: 3rem;
+    height: 70px;
+    width: 70px;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+  }
 }

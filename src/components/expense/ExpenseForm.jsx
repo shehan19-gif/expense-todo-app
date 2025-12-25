@@ -106,11 +106,26 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                     <label>🏷️ Category: </label>
                     <select name="category" id="category" value={formData.category} onChange={handleChange} required>
                         <option value="">Select Category</option>
-                        <option value="food">Food</option>
-                        <option value="transport">Transport</option>
-                        <option value="entertainment">Entertainment</option>
-                        <option value="utilities">Utilities</option>
-                        <option value="other">Other</option>
+                        <option value="🏠 Housing">🏠 Housing</option>
+                        <option value="🚗 Transport">🚗 Transport</option>
+                        <option value="🛒 Groceries">🛒 Groceries</option>
+                        <option value="🍽️ Dining">🍽️ Dining</option>
+                        <option value="🛍️ Shopping">🛍️ Shopping</option>
+                        <option value="💡 Utilities">💡 Utilities</option>
+                        <option value="📱 Subscriptions">📱 Subscriptions</option>
+                        <option value="🏥 Healthcare">🏥 Healthcare</option>
+                        <option value="🎯 Savings">🎯 Savings</option>
+                        <option value="🎬 Entertainment">🎬 Entertainment</option>
+                        <option value="📚 Education">📚 Education</option>
+                        <option value="👕 Clothing">👕 Clothing</option>
+                        <option value="💼 Business">💼 Business</option>
+                        <option value="✈️ Travel">✈️ Travel</option>
+                        <option value="🎁 Gifts">🎁 Gifts</option>
+                        <option value="💐 Donations">💐 Donations</option>
+                        <option value="💰 Salary">💰 Salary</option>
+                        <option value="💼 Freelance">💼 Freelance</option>
+                        <option value="📈 Investment">📈 Investment</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
@@ -122,19 +137,19 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                 <div className="formData__payment-method">
                     <label>💳 Payment Method: </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"cash"} checked={formData.paymentMethod === "cash"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cash"} checked={formData.paymentMethod === "cash"} onChange={handleChange} />
                         Cash
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"card"} checked={formData.paymentMethod === "card"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Card"} checked={formData.paymentMethod === "card"} onChange={handleChange} />
                         Card
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"cheque"} checked={formData.paymentMethod === "cheque"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cheque"} checked={formData.paymentMethod === "cheque"} onChange={handleChange} />
                         Cheque
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"other"} checked={formData.paymentMethod === "other"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Other"} checked={formData.paymentMethod === "other"} onChange={handleChange} />
                         Other
                     </label>
                 </div>

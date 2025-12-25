@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import styles from './ExpenseItem.module.css';
+import DescriptionBox from '../ui/DescriptionBox';
 
 function ExpenseItem({expense, onDelete}) {
   const handleDelete = () => {
@@ -17,13 +18,17 @@ function ExpenseItem({expense, onDelete}) {
             <p className={styles.amount}>💰 Amount: Rs. {expense.amount}</p>
             <p className={styles.category}>🏷️ Category: {expense.category}</p>
           </div>
+          
           <div className={styles.secondSec}>
             <p className={styles.payment}>💳 Payment Method: {expense.paymentMethod}</p>
           </div>
+          
           <div className={styles.thirdSec}>
-            <p className={styles.description}>📝 Description: {expense.description}</p>
+            {/* <p className={styles.description}>📝 Description: {expense.description}</p> */}
+            <DescriptionBox data={expense.description} />
             {expense.note && <p className={styles.note}>🗒️ Note: {expense.note}</p>}
           </div>
+          
           <div className={styles.fourthSec}>
             <p className={styles.date}>📅 Date: {new Date(expense.date).toLocaleDateString()}</p>
           </div>

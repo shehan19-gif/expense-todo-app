@@ -5,7 +5,6 @@ function Footer() {
   return (
     <div className={styles.footer}>
       <p className={styles.footerText}>&copy; {new Date().getFullYear()} Task & Expense Manager</p>
-      <p className={styles.footerTagline}>Simplifying your daily tasks and expenses.</p>
     </div>
   );
 }

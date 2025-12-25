@@ -5,8 +5,14 @@
     height: 100vh;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 400px) {
     .layout {
-        grid-template-rows: 200px calc(100vh - 250px) 100px;
+        grid-template-rows: auto calc(100vh - 200px) 100px;
+    }
+}
+
+@media screen and (max-width: 344px) {
+    .layout {
+        grid-template-rows: auto calc(100vh - 100px) 100px;
     }
 }

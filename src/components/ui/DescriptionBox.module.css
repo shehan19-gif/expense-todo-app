@@ -1,0 +1,38 @@
+/* Description section */
+.descriptionContainer {
+  /* margin: 1rem 0; */
+}
+
+details {
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* details[open] {
+} */
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+details[open] .arrow {
+  transform: rotate(180deg);
+}
+
+.descriptionContent {
+  padding: 1.5rem;
+  line-height: 1.6;
+}

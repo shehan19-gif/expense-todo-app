@@ -39,3 +39,88 @@
     background-color: rgba(59, 130, 246, 0.8);
     border: 2px solid var(--accent-blue);
 }
+
+/* Custom edits */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2d3748;
+}
+
+.cardDescription {
+  color: #718096;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardButton {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.loginButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.loginButton:hover {
+  background-color: transparent;
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.signupButton {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.signupButton:hover {
+  background-color: transparent;
+  color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .credentials {
+    grid-auto-flow: row;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
