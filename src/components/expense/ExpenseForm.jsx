@@ -137,19 +137,19 @@ function ExpenseForm({onSubmit, initialData, onCancel}) {
                 <div className="formData__payment-method">
                     <label>💳 Payment Method: </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cash"} checked={formData.paymentMethod === "cash"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cash"} checked={formData.paymentMethod === "Cash"} onChange={handleChange} />
                         Cash
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Card"} checked={formData.paymentMethod === "card"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Card"} checked={formData.paymentMethod === "Card"} onChange={handleChange} />
                         Card
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cheque"} checked={formData.paymentMethod === "cheque"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Cheque"} checked={formData.paymentMethod === "Cheque"} onChange={handleChange} />
                         Cheque
                     </label>
                     <label>
-                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Other"} checked={formData.paymentMethod === "other"} onChange={handleChange} />
+                        <input type="radio" name="paymentMethod" id="paymentMethod" value={"Other"} checked={formData.paymentMethod === "Other"} onChange={handleChange} />
                         Other
                     </label>
                 </div>
